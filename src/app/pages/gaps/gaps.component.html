@@ -1,0 +1,25 @@
+@if (!agent.isReady()) {
+  <p class="empty">Set your <a routerLink="/onboard">profile and dream role</a> first to see skill gaps.</p>
+} @else {
+  <h1>Skill gaps</h1>
+  <p class="subtitle">Gaps between your profile and « {{ agent.dreamRole()?.title }} » — what to learn next.</p>
+
+  <div class="gaps-list">
+    @for (gap of agent.skillGaps(); track gap.skill) {
+      <article class="gap-card" [class.critical]="gap.importance === 'critical'">
+        <div class="gap-header">
+          <strong>{{ gap.skill }}</strong>
+          <span class="badge" [attr.data-importance]="gap.importance">{{ gap.importance }}</span>
+        </div>
+        <p class="reason">{{ gap.reason }}</p>
+        <div class="levels">
+          <span>Current: {{ gap.currentLevel }}/5</span>
+          <span>Target: {{ gap.targetLevel }}/5</span>
+        </div>
+        <span class="category">{{ gap.category }}</span>
+      </article>
+    }
+  </div>
+
+  <a routerLink="/roadmap" class="btn btn-primary">View 30-day roadmap</a>
+}

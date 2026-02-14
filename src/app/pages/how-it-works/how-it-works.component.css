@@ -1,0 +1,66 @@
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.flow,
+.outcomes {
+  margin-bottom: 2rem;
+}
+
+.flow h2,
+.outcomes h2 {
+  font-size: 1.0625rem;
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.flow ol,
+.outcomes ul {
+  padding-left: 1.25rem;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-size: 0.9375rem;
+}
+
+.flow li,
+.outcomes li {
+  margin-bottom: 0.5rem;
+}
+
+.flow strong,
+.outcomes strong {
+  color: var(--text);
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(135deg, #3A86FF 0%, #2d6ae0 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(58, 134, 255, 0.45), 0 0 32px rgba(58, 134, 255, 0.12);
+}

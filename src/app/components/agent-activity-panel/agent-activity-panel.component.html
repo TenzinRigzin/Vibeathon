@@ -1,0 +1,29 @@
+<div class="panel">
+  <div class="panel-header">
+    <span class="glow-dot"></span>
+    <h3>Agent activity</h3>
+  </div>
+  @if (agent.steps().length === 0) {
+    <p class="empty">No activity yet. Set your profile and dream role to see the agent reason and plan.</p>
+  } @else {
+    <ul class="steps">
+      @for (step of agent.steps(); track step.id) {
+        <li class="step" [attr.data-status]="step.status">
+          <span class="step-icon">
+            @switch (step.status) {
+              @case ('done') { <span class="icon-done">✓</span> }
+              @case ('active') { <span class="icon-active"></span> }
+              @default { <span class="icon-pending">○</span> }
+            }
+          </span>
+          <div class="step-content">
+            <strong>{{ step.label }}</strong>
+            @if (step.message) {
+              <span class="step-message">{{ step.message }}</span>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</div>

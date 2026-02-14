@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global: Premium AI SaaS — viewport must be scroll container for scroll-linked animation */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  background: #060b12;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Home route: force window to scroll so scroll animation works */
+body.story-layout-scroll main.main,
+body.story-layout-scroll .glass-container {
+  overflow: visible !important;
+}
